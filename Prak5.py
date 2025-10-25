@@ -52,10 +52,18 @@ st.markdown("""
 # ============================================================
 @st.cache_resource
 def load_models():
-    yolo_model = YOLO("model/Nayma Alaydia_Laporan 2.pt")  # YOLOv8 Model
-    classifier = tf.keras.models.load_model("model/model_kecil.tflite")  # CNN Model
-    return yolo_model, classifier
+    # Load model YOLO
+    yolo_model = YOLO("model/Nayma Alaydia_Laporan 4.pt")
 
+    # Load model TensorFlow Lite
+    import tensorflow as tf
+
+    interpreter = tf.lite.Interpreter(model_path="model/model_kecil.tflite")
+    interpreter.allocate_tensors()
+
+    return yolo_model, interpreter
+
+# Panggil model
 yolo_model, classifier = load_models()
 
 # ============================================================
