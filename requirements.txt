@@ -1,11 +1,11 @@
 streamlit
 ultralytics
 tensorflow
+torch
+torchvision
+opencv-python
 numpy
 pillow
 pandas
 plotly
 matplotlib
-opencv-python
-torch
-torchvision
