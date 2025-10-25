@@ -52,8 +52,8 @@ st.markdown("""
 # ============================================================
 @st.cache_resource
 def load_models():
-    yolo_model = YOLO("model/model_kecil.tflite")  # YOLOv8 Model
-    classifier = tf.keras.models.load_model("model/Nayma Alaydia_Laporan 2.h5")  # CNN Model
+    yolo_model = YOLO("model/Nayma Alaydia_Laporan 2.pt")  # YOLOv8 Model
+    classifier = tf.keras.models.load_model("model/model_kecil.tflite")  # CNN Model
     return yolo_model, classifier
 
 yolo_model, classifier = load_models()
