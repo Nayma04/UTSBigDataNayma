@@ -6,3 +6,6 @@ pillow
 pandas
 plotly
 matplotlib
+opencv-python
+torch
+torchvision
