@@ -162,7 +162,19 @@ elif menu == "📷 Klasifikasi Gambar":
 
         # Prediksi
         with st.spinner("🔮 Menganalisis gambar..."):
-            prediction = classifier.predict(img_array)
+            # Dapatkan indeks input dan output
+            input_details = classifier.get_input_details()
+            output_details = classifier.get_output_details()
+
+            # Set input tensor
+            classifier.set_tensor(input_details[0]['index'], img_array.astype(np.float32))
+
+            # Jalankan inferensi
+            classifier.invoke()
+
+            # Ambil hasil output
+            prediction = classifier.get_tensor(output_details[0]['index'])
+
             class_index = np.argmax(prediction)
             confidence = np.max(prediction)
 
