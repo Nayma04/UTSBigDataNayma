@@ -232,49 +232,23 @@ elif menu == "🎯 Deteksi Objek (YOLO)":
         st.success("✅ Deteksi selesai!")
 
 # ============================================================
-# ℹ️ Tentang Aplikasi — Versi Card Modern
+# ℹ Tentang Aplikasi
 # ============================================================
-elif menu == "ℹ️ Tentang Aplikasi":
-    st.header("ℹ️ Tentang Aplikasi")
-
+elif menu == "ℹ Tentang Aplikasi":
+    st.header("ℹ Tentang Aplikasi")
     st.markdown("""
-<div style='
-    background: linear-gradient(135deg, #e0f2fe, #ffffff);
-    border-radius: 16px;
-    padding: 30px 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    font-family: "Segoe UI", sans-serif;
-    color: #0f172a;
-'>
-    <h2 style='color:#1e3a8a; margin-bottom:10px;'>🎓 Dashboard UTS Praktikum Pemrograman Big Data</h2>
-    <p style='font-size:16px; line-height:1.6;'>
-        Dashboard ini dikembangkan sebagai bagian dari <b>Ujian Tengah Semester (UTS)</b> mata kuliah 
-        <b>Praktikum Pemrograman Big Data</b>.
-    </p>
-
-    <p style='font-size:16px; line-height:1.6;'>
+    ### 🎓 Dashboard UTS Praktikum Pemrograman Big Data  
+        Dashboard ini dikembangkan sebagai bagian dari *Ujian Tengah Semester (UTS)* mata kuliah *Praktikum Pemrograman Big Data*.  
         Aplikasi ini bertujuan untuk mendemonstrasikan integrasi dua model analisis data gambar, yaitu:
-    </p>
 
-    <ul style='font-size:16px; line-height:1.8; margin-left:20px;'>
-        <li>📷 <b>Klasifikasi Gambar</b> menggunakan model <b>Convolutional Neural Network (CNN)</b></li>
-        <li>🎯 <b>Deteksi Objek</b> menggunakan model <b>YOLOv8</b></li>
-    </ul>
+        - 📷 *Klasifikasi Gambar* menggunakan model *Convolutional Neural Network (CNN)*  
+        - 🎯 *Deteksi Objek* menggunakan model *YOLOv8*  
 
-    <p style='font-size:16px; line-height:1.6;'>
-        Dashboard ini dirancang agar bersifat <b>interaktif</b> dan <b>informatif</b>, sehingga dapat digunakan 
-        untuk <b>eksplorasi dan analisis data gambar (image data)</b> secara visual. Melalui implementasi ini, 
-        konsep <b>Data Gambar</b> diintegrasikan dengan pendekatan <b>Big Data</b> untuk memahami bagaimana data 
-        dapat diolah, dianalisis, dan divisualisasikan menggunakan teknologi modern.
-    </p>
+        Dashboard ini dirancang agar bersifat *interaktif dan informatif, sehingga dapat digunakan untuk **eksplorasi dan analisis data gambar (image data)* 
+        secara visual. Melalui implementasi ini, konsep *Data Gambar* diintegrasikan dengan pendekatan *Big Data* untuk memahami bagaimana data dapat diolah, 
+        dianalisis, dan divisualisasikan menggunakan teknologi modern.  
 
-    <hr style='margin:25px 0; border:none; border-top:1px solid #93c5fd;'>
-
-    <p style='font-size:16px; line-height:1.8;'>
-        👩‍💻 <b>Dikembangkan oleh:</b> <i>Nayma Alaydia</i><br>
-        📘 <b>Mata Kuliah:</b> Praktikum Pemrograman Big Data<br>
-        🏫 <b>Tujuan:</b> Implementasi konsep analisis data gambar dalam konteks Big Data.
-    </p>
-</div>
-""", unsafe_allow_html=True)
-
+        👩‍💻 *Dikembangkan oleh:* Nayma Alaydia  
+        📘 *Mata Kuliah:* Praktikum Pemrograman Big Data  
+        🏫 *Tujuan:* Implementasi konsep analisis data gambar dalam konteks Big Data.
+        """)
