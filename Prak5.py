@@ -137,48 +137,56 @@ elif menu == "📷 Klasifikasi Gambar":
 
     uploaded_file = st.file_uploader("Unggah gambar:", type=["jpg", "jpeg", "png"])
     if uploaded_file:
-        img = Image.open(uploaded_file)
-        st.image(img, caption="🖼️ Gambar yang diunggah", use_container_width=True)
+        file_name = uploaded_file.name.lower()
 
-        img_resized = img.resize((224, 224))
-        img_array = image.img_to_array(img_resized)
-        img_array = np.expand_dims(img_array, axis=0) / 255.0
-
-        with st.spinner("🔮 Menganalisis gambar..."):
-            input_details = classifier.get_input_details()
-            output_details = classifier.get_output_details()
-            classifier.set_tensor(input_details[0]['index'], img_array.astype(np.float32))
-            classifier.invoke()
-            prediction = classifier.get_tensor(output_details[0]['index'])[0]
-
-        class_index = np.argmax(prediction)
-        confidence = np.max(prediction)
-        data_path = "data/Klasifikasi Gambar"
-        class_labels = sorted(os.listdir(data_path))
-        predicted_label = class_labels[class_index] if class_index < len(class_labels) else f"Kelas {class_index}"
-
-        # Panel hasil
-        col1, col2 = st.columns(2)
-        col1.metric("🧩 Prediksi", predicted_label)
-        col2.metric("🔢 Probabilitas", f"{confidence*100:.2f}%")
-
-        # Fallback
-        if confidence < 0.5:
-            st.warning("⚠️ Model tidak yakin — gambar mungkin di luar domain model klasifikasi.")
-        elif confidence > 0.8:
-            st.success("✅ Model sangat yakin dengan hasil ini!")
+        # 🔍 Deteksi jika gambar berasal dari dataset YOLO / Object Detection
+        if any(keyword in file_name for keyword in ["yolo", "object", "deteksi", "detection"]):
+            st.warning("⚠️ Gambar ini kemungkinan berasal dari dataset deteksi objek (YOLO), "
+                       "sehingga tidak akan diklasifikasikan oleh model klasifikasi.")
         else:
-            st.info("ℹ️ Model cukup yakin, tapi perlu verifikasi manual.")
+            img = Image.open(uploaded_file)
+            st.image(img, caption="🖼️ Gambar yang diunggah", use_container_width=True)
 
-        # Grafik probabilitas
-        fig = px.bar(
-            x=class_labels,
-            y=prediction,
-            title="📈 Distribusi Probabilitas Prediksi",
-            color=class_labels,
-            color_discrete_sequence=px.colors.qualitative.Bold
-        )
-        st.plotly_chart(fig, use_container_width=True)
+            img_resized = img.resize((224, 224))
+            img_array = image.img_to_array(img_resized)
+            img_array = np.expand_dims(img_array, axis=0) / 255.0
+
+            with st.spinner("🔮 Menganalisis gambar..."):
+                input_details = classifier.get_input_details()
+                output_details = classifier.get_output_details()
+                classifier.set_tensor(input_details[0]['index'], img_array.astype(np.float32))
+                classifier.invoke()
+                prediction = classifier.get_tensor(output_details[0]['index'])[0]
+
+            class_index = np.argmax(prediction)
+            confidence = np.max(prediction)
+            data_path = "data/Klasifikasi Gambar"
+            class_labels = sorted(os.listdir(data_path))
+            predicted_label = class_labels[class_index] if class_index < len(class_labels) else f"Kelas {class_index}"
+
+            # Panel hasil
+            col1, col2 = st.columns(2)
+            col1.metric("🧩 Prediksi", predicted_label)
+            col2.metric("🔢 Probabilitas", f"{confidence*100:.2f}%")
+
+            # Fallback jika model tidak yakin
+            if confidence < 0.5:
+                st.warning("⚠️ Model tidak yakin — gambar mungkin di luar domain model klasifikasi.")
+            elif confidence > 0.8:
+                st.success("✅ Model sangat yakin dengan hasil ini!")
+            else:
+                st.info("ℹ️ Model cukup yakin, tapi perlu verifikasi manual.")
+
+            # Grafik probabilitas
+            fig = px.bar(
+                x=class_labels,
+                y=prediction,
+                title="📈 Distribusi Probabilitas Prediksi",
+                color=class_labels,
+                color_discrete_sequence=px.colors.qualitative.Bold
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
 
 # ============================================================
 # 🎯 DETEKSI OBJEK YOLO
