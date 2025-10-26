@@ -84,22 +84,20 @@ menu = st.sidebar.radio(
 )
 
 # ============================================================
-# 👩‍💻 Informasi Pengembang di Sidebar (dengan logo dari link)
+# 👩‍💻 Informasi Pengembang
 # ============================================================
 st.sidebar.markdown("---")
-st.sidebar.image(
-    "https://krs.usk.ac.id/assets/media/logos/LOGO-USK-MASTER3black.png",
-    width=100
-)
+
+# Logo + identitas di tengah
 st.sidebar.markdown("""
-    <div style='text-align: center; color: white; font-size: 14px;'>
-        <b>Nayma Alaydia</b><br>
-        NPM: 2108108010016<br>
-        Universitas Syiah Kuala<br>
-        📍 Banda Aceh
+    <div style='text-align: center;'>
+        <img src='https://krs.usk.ac.id/assets/media/logos/LOGO-USK-MASTER3black.png' width='120'>
+        <h4 style='margin-bottom: 4px; color: white;'>Nayma Alaydia</h4>
+        <p style='margin: 0; color: white;'>NPM: 2108108010016</p>
+        <p style='margin: 0; color: white;'>Universitas Syiah Kuala</p>
+        <p style='margin: 0; color: white;'>📍 Banda Aceh</p>
     </div>
 """, unsafe_allow_html=True)
-
 
 # ============================================================
 # 🏞️ VISUALISASI DATASET
