@@ -92,10 +92,10 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("""
     <div style='text-align: center;'>
         <img src='https://krs.usk.ac.id/assets/media/logos/LOGO-USK-MASTER3black.png' width='120'>
-        <h4 style='margin-bottom: 4px; color: white;'>Nayma Alaydia</h4>
+        <h4 style='margin: 0; color: white;'>Nayma Alaydia</h4>
         <p style='margin: 0; color: white;'>NPM: 2108108010016</p>
         <p style='margin: 0; color: white;'>Universitas Syiah Kuala</p>
-        <p style='margin: 0; color: white;'>📍 Banda Aceh</p>
+        <p style='margin: 0; color: white;'>Banda Aceh</p>
     </div>
 """, unsafe_allow_html=True)
 
