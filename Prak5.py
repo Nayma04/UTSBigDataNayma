@@ -237,18 +237,23 @@ elif menu == "🎯 Deteksi Objek (YOLO)":
 elif menu == "ℹ Tentang Aplikasi":
     st.header("ℹ Tentang Aplikasi")
     st.markdown("""
-### 🎓 Dashboard UTS Praktikum Pemrograman Big Data  
-Dashboard ini dikembangkan sebagai bagian dari *Ujian Tengah Semester (UTS)* mata kuliah *Praktikum Pemrograman Big Data*.  
-Aplikasi ini bertujuan untuk mendemonstrasikan integrasi dua model analisis data gambar, yaitu:
+    ### 🎓 Dashboard UTS Praktikum Pemrograman Big Data  
+    Dashboard ini dikembangkan sebagai bagian dari *Ujian Tengah Semester (UTS)* mata kuliah *Praktikum Pemrograman Big Data*.  
+    Aplikasi ini bertujuan untuk mendemonstrasikan integrasi dua model analisis data gambar, yaitu:
 
-- 📷 *Klasifikasi Gambar* menggunakan model *Convolutional Neural Network (CNN)*  
-- 🎯 *Deteksi Objek* menggunakan model *YOLOv8*  
+    - 📷 *Klasifikasi Gambar* menggunakan model *Convolutional Neural Network (CNN)*  
+    - 🎯 *Deteksi Objek* menggunakan model *YOLOv8*  
 
-Dashboard ini dirancang agar bersifat *interaktif dan informatif, sehingga dapat digunakan untuk **eksplorasi dan analisis data gambar (image data)* 
-secara visual. Melalui implementasi ini, konsep *Data Gambar* diintegrasikan dengan pendekatan *Big Data* untuk memahami bagaimana data dapat diolah, 
-dianalisis, dan divisualisasikan menggunakan teknologi modern.  
+    Dashboard ini dirancang agar bersifat *interaktif dan informatif, sehingga dapat digunakan untuk **eksplorasi dan analisis data gambar (image data)* 
+    secara visual. Melalui implementasi ini, konsep *Data Gambar* diintegrasikan dengan pendekatan *Big Data* untuk memahami bagaimana data dapat diolah, 
+    dianalisis, dan divisualisasikan menggunakan teknologi modern.  
 
-👩‍💻 *Dikembangkan oleh:* Nayma Alaydia  
-📘 *Mata Kuliah:* Praktikum Pemrograman Big Data  
-🏫 *Tujuan:* Implementasi konsep analisis data gambar dalam konteks Big Data.
+    👩‍💻 *Dikembangkan oleh:* Nayma Alaydia  
+    📘 *Mata Kuliah:* Praktikum Pemrograman Big Data  
+    🏫 *Tujuan:* Implementasi konsep analisis data gambar dalam konteks Big Data.
+    """)
+
+st.markdown("""
+### Halo dari Streamlit
+Teks ini seharusnya muncul kalau markdown bekerja.
 """)
