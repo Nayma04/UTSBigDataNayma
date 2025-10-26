@@ -1,5 +1,5 @@
 # ============================================================
-# 🧠 AI Vision Dashboard — Analitik Lengkap (TFLite + YOLO)
+# 🧠 Dashboard Analisis Data Gambar
 # ============================================================
 
 import streamlit as st
@@ -16,12 +16,11 @@ import plotly.express as px
 # ⚙️ Konfigurasi Halaman
 # ============================================================
 st.set_page_config(
-    page_title="AI Vision Dashboard",
+    page_title="Dashboard Analisis Data Gambar",
     page_icon="🧠",
     layout="wide",
 )
 
-# CSS untuk tampilan analitik modern
 st.markdown("""
     <style>
         body { background-color: #f8fafc; font-family: 'Segoe UI', sans-serif; }
@@ -42,7 +41,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🧠 AI Vision Dashboard")
+st.title("🧠 Dashboard Analisis Data Gambar")
 st.markdown("### Analisis Data Gambar dengan *Klasifikasi* dan *Deteksi Objek*")
 
 # ============================================================
@@ -81,7 +80,7 @@ def get_dataset_info(dataset_path):
 # ============================================================
 menu = st.sidebar.radio(
     "📌 Pilih Mode:",
-    ["🏞️ Visualisasi Dataset", "📷 Klasifikasi Gambar", "🎯 Deteksi Objek (YOLO)", "ℹ️ Tentang Aplikasi"]
+    ["🏞️ Visualisasi Dataset", "📷 Klasifikasi Gambar", "🎯 Deteksi Objek (YOLO)", "ℹ️ Tentang Dashboard"]
 )
 
 # ============================================================
@@ -218,20 +217,20 @@ elif menu == "🎯 Deteksi Objek (YOLO)":
             st.warning("⚠️ Tidak ada objek yang terdeteksi.")
 
 # ============================================================
-# ℹ️ TENTANG APLIKASI
+# ℹ️ TENTANG DASHBOARD
 # ============================================================
-elif menu == "ℹ️ Tentang Aplikasi":
-    st.header("ℹ️ Tentang Aplikasi")
+elif menu == "ℹ️ Tentang Dashboard":
+    st.header("ℹ️ Tentang Dashboard")
     st.markdown("""
     ### 🎓 Dashboard UTS Praktikum Pemrograman Big Data  
     Dashboard ini dikembangkan untuk mendemonstrasikan dua model analisis data gambar:
-    - 📷 *Klasifikasi Gambar* menggunakan model **TensorFlow Lite (CNN)**  
-    - 🎯 *Deteksi Objek* menggunakan model **YOLOv8 (.pt)**  
+    - 📷 *Klasifikasi Gambar* menggunakan model CNN  
+    - 🎯 *Deteksi Objek* menggunakan model YOLOv8  
 
     Dashboard ini bersifat interaktif dan informatif, membantu dalam eksplorasi data gambar
     dengan pendekatan berbasis **AI Vision**.
 
     👩‍💻 **Dikembangkan oleh:** *Nayma Alaydia*  
     📘 **Mata Kuliah:** Praktikum Pemrograman Big Data  
-    🏫 **Tujuan:** Demonstrasi implementasi *Big Data & Computer Vision*
+    🏫 **Tujuan:** Demonstrasi implementasi Big Data & Analisis Data Gambar
     """)
