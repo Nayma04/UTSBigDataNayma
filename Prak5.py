@@ -84,6 +84,24 @@ menu = st.sidebar.radio(
 )
 
 # ============================================================
+# 👩‍💻 Informasi Pengembang di Sidebar (dengan logo dari link)
+# ============================================================
+st.sidebar.markdown("---")
+st.sidebar.image(
+    "https://krs.usk.ac.id/assets/media/logos/LOGO-USK-MASTER3black.png",
+    width=100
+)
+st.sidebar.markdown("""
+    <div style='text-align: center; color: white; font-size: 14px;'>
+        <b>Nayma Alaydia</b><br>
+        NPM: 2108108010016<br>
+        Universitas Syiah Kuala<br>
+        📍 Banda Aceh
+    </div>
+""", unsafe_allow_html=True)
+
+
+# ============================================================
 # 🏞️ VISUALISASI DATASET
 # ============================================================
 if menu == "🏞️ Visualisasi Dataset":
