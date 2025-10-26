@@ -234,8 +234,8 @@ elif menu == "🎯 Deteksi Objek (YOLO)":
 # ============================================================
 # ℹ Tentang Aplikasi
 # ============================================================
-elif menu == "ℹ Tentang Aplikasi":
-    st.header("ℹ Tentang Aplikasi")
+elif menu == "ℹ️ Tentang Aplikasi":
+    st.header("ℹ️ Tentang Aplikasi")
     st.markdown("""
     ### 🎓 Dashboard UTS Praktikum Pemrograman Big Data  
     Dashboard ini dikembangkan sebagai bagian dari *Ujian Tengah Semester (UTS)* mata kuliah *Praktikum Pemrograman Big Data*.  
@@ -244,7 +244,7 @@ elif menu == "ℹ Tentang Aplikasi":
     - 📷 *Klasifikasi Gambar* menggunakan model *Convolutional Neural Network (CNN)*  
     - 🎯 *Deteksi Objek* menggunakan model *YOLOv8*  
 
-    Dashboard ini dirancang agar bersifat *interaktif dan informatif, sehingga dapat digunakan untuk **eksplorasi dan analisis data gambar (image data)* 
+    Dashboard ini dirancang agar bersifat *interaktif dan informatif*, sehingga dapat digunakan untuk **eksplorasi dan analisis data gambar (image data)** 
     secara visual. Melalui implementasi ini, konsep *Data Gambar* diintegrasikan dengan pendekatan *Big Data* untuk memahami bagaimana data dapat diolah, 
     dianalisis, dan divisualisasikan menggunakan teknologi modern.  
 
@@ -252,8 +252,3 @@ elif menu == "ℹ Tentang Aplikasi":
     📘 *Mata Kuliah:* Praktikum Pemrograman Big Data  
     🏫 *Tujuan:* Implementasi konsep analisis data gambar dalam konteks Big Data.
     """)
-
-st.markdown("""
-### Halo dari Streamlit
-Teks ini seharusnya muncul kalau markdown bekerja.
-""")
